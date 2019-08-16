@@ -1,0 +1,23 @@
+{
+  "name": "wordpress-graphql-gatasby",
+  "version": "0.0.1",
+  "description": "A Gatsby site powered by WordPress and GraphQL!",
+  "scripts": {
+    "start": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^2.13.67",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "gatsby-source-graphql": "^2.1.5"
+  },
+  "repository": {
+    "url": "https://github.com/gregrickaby/gatsby-graphql-wordpress"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "gatsby",
+    "wordpress"
+  ]
+}
