@@ -5,6 +5,7 @@ module.exports = {
     author: "@gregrickaby"
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-graphql",
       options: {
@@ -13,6 +14,8 @@ module.exports = {
         url: "https://gregrickaby.blog/graphql",
         refetchInterval: 60
       }
-    }
+    },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp"
   ]
 };
