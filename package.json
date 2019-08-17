@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "A Gatsby stater powered by GraphQL and WordPress!",
   "scripts": {
-    "start": "gatsby develop"
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "gatsby": "^2.13.67",
