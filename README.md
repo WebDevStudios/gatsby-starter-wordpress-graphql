@@ -1,21 +1,20 @@
 # gatsby-graphql-wordpress-starter
 
+A [Gatsby](https://gatsbyjs.org) starter powered by [GraphQL](https://graphql.org/) and [WordPress](https://wordpress.org)! Check out the demo: https://gatsby-graphql-wordpress-starter.netlify.com/
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ee5783b5-a642-46e9-bd0d-35866c7c55e3/deploy-status)](https://app.netlify.com/sites/gatsby-graphql-wordpress-starter/deploys)
-
-A [Gatsby](https://gatsbyjs.org) starter powered by [GraphQL](https://graphql.org/) and [WordPress](https://wordpress.org)!
-
-## Demo
-https://gatsby-graphql-wordpress-starter.netlify.com/
 
 ## Description
 
 Meant to be a barebones starter to help you get up and running quickly. Includes [React Helmet](https://github.com/nfl/react-helmet) for basic SEO. _Sorry, WordPress comments don't work just yet._
 
-## Before you start
+## Development
+
+### Before you start
 
 You will need a WordPress site with the [WPGraphQL](https://www.wpgraphql.com/) plugin installed and activated.
 
-## Development
+### Get Started
 
 **Clone**
 ```bash
