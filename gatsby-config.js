@@ -1,13 +1,13 @@
 module.exports = {
   plugins: [
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: "gatsby-source-graphql",
       options: {
-        typeName: 'WordPress',
-        fieldName: 'wordPress',
-        url: 'https://acf.wpgraphql.com/graphql',
+        typeName: "WordPress",
+        fieldName: "wordPress",
+        url: "https://gregrickaby.blog/graphql",
         refetchInterval: 60
       }
     }
   ]
-}
+};
