@@ -1,6 +1,6 @@
 # gatsby-graphql-wordpress-starter
 
-A [Gatsby](https://gatsbyjs.org) starter powered by [WordPress](https://wordpress.org) and [GraphQL](https://graphql.org/).
+A [Gatsby](https://gatsbyjs.org) starter powered by [GraphQL](https://graphql.org/) and [WordPress](https://wordpress.org)!
 
 ## Description
 
