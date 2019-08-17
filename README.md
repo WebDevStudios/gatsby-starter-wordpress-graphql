@@ -1,5 +1,7 @@
 # gatsby-graphql-wordpress-starter
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ee5783b5-a642-46e9-bd0d-35866c7c55e3/deploy-status)](https://app.netlify.com/sites/gatsby-graphql-wordpress-starter/deploys)
+
 A [Gatsby](https://gatsbyjs.org) starter powered by [GraphQL](https://graphql.org/) and [WordPress](https://wordpress.org)!
 
 ## Demo
