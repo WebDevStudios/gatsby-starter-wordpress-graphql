@@ -18,7 +18,7 @@ export default Home;
 
 export const pageQuery = graphql`
   {
-    wordPress {
+    wordpress {
       posts(last: 10) {
         nodes {
           id

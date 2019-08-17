@@ -10,7 +10,7 @@ module.exports = {
       resolve: "gatsby-source-graphql",
       options: {
         typeName: "WordPress",
-        fieldName: "wordPress",
+        fieldName: "wordpress",
         url: "https://gregrickaby.blog/graphql",
         refetchInterval: 60
       }
