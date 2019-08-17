@@ -8,7 +8,7 @@ const Header = ({ siteTitle, siteDescription }) => (
   </header>
 );
 
-Header.PropTypes = {
+Header.propTypes = {
   siteTitle: PropTypes.string,
   siteDescription: PropTypes.string
 };
