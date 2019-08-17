@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "My Blog",
-    description: "A Gatsby site powered by WordPress and GraphQL!",
+    title: "Gatsby WordPress Starter",
+    description: "A Gatsby stater powered by WordPress and GraphQL!",
     author: "@gregrickaby"
   },
   plugins: [

@@ -3,7 +3,7 @@ const path = require("path");
 const slash = require("slash");
 
 /**
- * Progromatically create posts, pages, and archives.
+ * Programmatically create posts, pages, and the archives.
  */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;

@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-graphql-wordpress",
+  "name": "gatsby-graphql-wordpress-starter",
   "version": "0.0.1",
-  "description": "A Gatsby site powered by WordPress and GraphQL!",
+  "description": "A Gatsby stater powered by GraphQL and WordPress!",
   "scripts": {
     "start": "gatsby develop"
   },
@@ -18,7 +18,7 @@
     "react-helmet": "^5.2.1"
   },
   "repository": {
-    "url": "https://github.com/gregrickaby/gatsby-graphql-wordpress"
+    "url": "https://github.com/gregrickaby/gatsby-graphql-wordpress-starter"
   },
   "license": "MIT",
   "keywords": [
