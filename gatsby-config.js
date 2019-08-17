@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: "Gatsby Blog",
+    description: "It's Gatsby, powered by WordPress + GraphQL.",
+    author: "@gregrickaby"
+  },
   plugins: [
     {
       resolve: "gatsby-source-graphql",
