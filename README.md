@@ -31,12 +31,17 @@ url: "https://your-website.com/graphql",
 
 **Develop**
 ```bash
-gatsby develop
+yarn start
 ```
 
 **Deploy**
 ```bash
-gatsby build
+yarn buld
+```
+
+**Clear cache and start fresh**
+```bash
+yarn clean
 ```
 
 ## Need help?
