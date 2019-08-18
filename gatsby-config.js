@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    author: "@gregrickaby"
+  },
   plugins: [
     "gatsby-plugin-react-helmet",
     {
