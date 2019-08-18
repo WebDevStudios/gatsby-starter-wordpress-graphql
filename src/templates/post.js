@@ -8,50 +8,45 @@ class PostTemplate extends Component {
 
     return (
       <Layout>
-        <article>
+        <article id={post.id}>
           <header>
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
             <div>
-              <span>
-                <span>Posted by</span>
-                <span>
-                  <Link to={"/author/" + post.author.slug}>
-                    {post.author.name}
-                  </Link>
-                </span>
-              </span>
-              <span>
+              <time datetime={post.date} pubdate>
+                Published on{" "}
                 <Link to={post.slug} rel="bookmark">
-                  <time>{post.date}</time>
+                  {post.date}
+                </Link>
+              </time>
+              <span>
+                {" "}
+                by{" "}
+                <Link to={"/author/" + post.author.slug}>
+                  <span>{post.author.name}</span>
                 </Link>
               </span>
-              <span>
-                <span>{post.commentCount} Comments</span>
-              </span>
+              {null === post.commentCount
+                ? ``
+                : `with ${post.commentCount} comments`}
             </div>
           </header>
-          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <section dangerouslySetInnerHTML={{ __html: post.content }} />
           <footer>
-            <span>
-              <span>Posted by</span>
-              <span>
-                <Link to={"/author/" + post.author.slug}>
-                  {post.author.name}
-                </Link>
-              </span>
-            </span>
-            <span>
-              <Link to={post.path} rel="bookmark">
-                <time>{post.date}</time>
+            Filed under{" "}
+            {post.categories.edges.map(category => (
+              <Link
+                key={category.node.slug}
+                to={"/category/" + category.node.slug}
+              >
+                {category.node.name}
               </Link>
-            </span>
-            <span>
-              {post.categories.edges.map(category => (
-                <Link key={category.slug} to={"/category/" + category.slug}>
-                  {category.name}
-                </Link>
-              ))}
-            </span>
+            ))}{" "}
+            and tagged with{" "}
+            {post.tags.edges.map(tag => (
+              <Link key={tag.node.slug} to={"/tag/" + tag.node.slug}>
+                {tag.node.name}
+              </Link>
+            ))}
           </footer>
         </article>
       </Layout>
@@ -86,6 +81,15 @@ export const pageQuery = graphql`
           }
         }
         date
+        tags {
+          edges {
+            node {
+              name
+              id
+              slug
+            }
+          }
+        }
       }
     }
   }
