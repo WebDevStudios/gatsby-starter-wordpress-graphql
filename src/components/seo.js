@@ -7,10 +7,14 @@ function SEO({ description, lang, meta, title }) {
   const { wordpress } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
+        wordpress {
+          generalSettings {
             title
             description
+          }
+        }
+        site {
+          siteMetadata {
             author
           }
         }
