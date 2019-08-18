@@ -24,7 +24,9 @@ class CategoryTemplate extends Component {
             <div dangerouslySetInnerHTML={{ __html: post.node.content }} />
             <footer>
               <span>
-                <Link to={post.node.author.slug}>{post.node.author.name}</Link>
+                <Link to={"/author/" + post.node.author.slug}>
+                  {post.node.author.name}
+                </Link>
               </span>
               <time>{post.node.date}</time>
               Filed under{" "}
