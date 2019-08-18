@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
 
 const Footer = ({ siteTitle }) => (
   <footer>
-    <Link href="/" dangerouslySetInnerHTML={{ __html: siteTitle }} />
+    Copyright {new Date().getFullYear()} {siteTitle} &middot; Powered by Gatsby,
+    GraphQL, and WordPress.
   </footer>
 );
 
