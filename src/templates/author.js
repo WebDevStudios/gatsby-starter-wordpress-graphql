@@ -8,7 +8,6 @@ class AuthorTemplate extends Component {
 
     return (
       <Layout>
-        <pre>{JSON.stringify(author, null, 2)}</pre>
         <header>
           <h1>
             Author Archives: <span>{author.name}</span>
