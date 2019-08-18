@@ -22,11 +22,9 @@ const Layout = ({ children }) => (
           siteTitle={data.wordpress.generalSettings.title}
           siteDescription={data.wordpress.generalSettings.description}
         />
-        <div>
-          <section>
-            <main>{children}</main>
-          </section>
-        </div>
+        <section>
+          <main>{children}</main>
+        </section>
         <Footer siteTitle={data.wordpress.generalSettings.title} />
       </>
     )}
