@@ -42,6 +42,17 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        tags {
+          edges {
+            node {
+              id
+              tagId
+              slug
+              description
+              name
+            }
+          }
+        }
         users {
           edges {
             node {
@@ -60,19 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw new Error(result.errors);
   }
 
-  const { posts, pages, categories, users } = result.data.wordpress;
-
-  // Create pages.
-  const pageTemplate = path.resolve(`./src/templates/page.js`);
-  pages.edges.forEach(edge => {
-    createPage({
-      path: `/${edge.node.slug}/`,
-      component: slash(pageTemplate),
-      context: {
-        id: edge.node.id
-      }
-    });
-  });
+  const { posts, pages, categories, tags, users } = result.data.wordpress;
 
   // Create posts.
   const postTemplate = path.resolve(`./src/templates/post.js`);
@@ -87,12 +86,36 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  // Create pages.
+  const pageTemplate = path.resolve(`./src/templates/page.js`);
+  pages.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.slug}/`,
+      component: slash(pageTemplate),
+      context: {
+        id: edge.node.id
+      }
+    });
+  });
+
   // Create category archives.
   const categoryTemplate = path.resolve(`./src/templates/category.js`);
   categories.edges.forEach(edge => {
     createPage({
       path: `/category/${edge.node.slug}/`,
       component: slash(categoryTemplate),
+      context: {
+        id: edge.node.id
+      }
+    });
+  });
+
+  // Create tag archives.
+  const tagTemplate = path.resolve(`./src/templates/tag.js`);
+  tags.edges.forEach(edge => {
+    createPage({
+      path: `/tag/${edge.node.slug}/`,
+      component: slash(tagTemplate),
       context: {
         id: edge.node.id
       }
