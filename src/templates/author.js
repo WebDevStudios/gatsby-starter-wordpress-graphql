@@ -5,18 +5,18 @@ import Layout from "../components/layout";
 class AuthorTemplate extends Component {
   render() {
     const author = this.props.data.wordpress.user;
-    const authorPosts = author.posts;
 
     return (
       <Layout>
+        <pre>{JSON.stringify(author, null, 2)}</pre>
         <header>
           <h1>
             Author Archives: <span>{author.name}</span>
           </h1>
         </header>
 
-        {authorPosts.edges.map(post => (
-          <article>
+        {author.posts.edges.map(post => (
+          <article id={author.id}>
             <header>
               <h2>
                 <Link to={post.node.slug}>{post.node.title}</Link>
@@ -28,12 +28,21 @@ class AuthorTemplate extends Component {
                 <Link to={author.slug}>{author.name}</Link>
               </span>
               <span>{post.node.date}</span>
-              <span>
-                {post.node.categories.edges.map(category => (
-                  <Link to={category.slug}>{category.name}</Link>
-                ))}
-              </span>
-              <span />
+              Filed under{" "}
+              {post.node.categories.edges.map(category => (
+                <Link
+                  key={category.node.slug}
+                  to={"/category/" + category.node.slug}
+                >
+                  {category.node.name}
+                </Link>
+              ))}{" "}
+              and tagged with{" "}
+              {post.node.tags.edges.map(tag => (
+                <Link key={tag.node.slug} to={"/tag/" + tag.node.slug}>
+                  {tag.node.name}
+                </Link>
+              ))}
             </footer>
           </article>
         ))}
@@ -48,6 +57,7 @@ export const pageQuery = graphql`
   query($id: ID!) {
     wordpress {
       user(id: $id) {
+        id
         name
         slug
         posts {
@@ -57,6 +67,7 @@ export const pageQuery = graphql`
               title
               content
               excerpt
+              date
               categories {
                 edges {
                   node {
@@ -66,7 +77,15 @@ export const pageQuery = graphql`
                   }
                 }
               }
-              date
+              tags {
+                edges {
+                  node {
+                    id
+                    name
+                    slug
+                  }
+                }
+              }
             }
           }
         }
