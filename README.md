@@ -6,7 +6,14 @@ A [Gatsby](https://gatsbyjs.org) starter powered by [GraphQL](https://graphql.or
 
 ## Description
 
-Meant to be a barebones starter to help you get up and running quickly. Includes [React Helmet](https://github.com/nfl/react-helmet) for basic SEO. _Sorry, WordPress comments don't work just yet._
+A barebones starter to help you get up and running quickly. Includes support for:
+
+- Gutenberg
+- Posts
+- Pages
+- Category, Tag, and Author archivies
+- [React Helmet](https://github.com/nfl/react-helmet) for basic SEO.
+- _Sorry, WordPress comments don't work just yet._
 
 ## Development
 
