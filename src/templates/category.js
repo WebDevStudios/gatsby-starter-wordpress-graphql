@@ -8,7 +8,6 @@ class CategoryTemplate extends Component {
 
     return (
       <Layout>
-        <pre>{JSON.stringify(category.id, null, 2)}</pre>
         <header>
           <h1>
             Category Archives: <span>{category.name}</span>
