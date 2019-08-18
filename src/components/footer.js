@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const Footer = ({ siteTitle }) => (
   <footer>
-    Copyright {new Date().getFullYear()} {siteTitle} &middot; Powered by Gatsby,
-    GraphQL, and WordPress.
+    Copyright {new Date().getFullYear()} &middot; {siteTitle} &middot; Powered
+    by Gatsby, GraphQL, and WordPress.
   </footer>
 );
 
