@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
+import { Meta } from "../components/template-tags";
 
 class TagTemplate extends Component {
   render() {
@@ -21,29 +22,9 @@ class TagTemplate extends Component {
                 <Link to={post.node.slug}>{post.node.title}</Link>
               </h2>
             </header>
-            <div dangerouslySetInnerHTML={{ __html: post.node.content }} />
+            <div dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
             <footer>
-              <span>
-                <Link to={"/author/" + post.node.author.slug}>
-                  {post.node.author.name}
-                </Link>
-              </span>
-              <time>{post.node.date}</time>
-              Filed under{" "}
-              {post.node.categories.edges.map(category => (
-                <Link
-                  key={category.node.slug}
-                  to={"/category/" + category.node.slug}
-                >
-                  {category.node.name}
-                </Link>
-              ))}{" "}
-              and tagged with{" "}
-              {post.node.tags.edges.map(tag => (
-                <Link key={tag.node.slug} to={"/tag/" + tag.node.slug}>
-                  {tag.node.name}
-                </Link>
-              ))}
+              <Meta props={post.node} />
             </footer>
           </article>
         ))}
@@ -68,8 +49,6 @@ export const pageQuery = graphql`
               slug
               title
               date
-              content
-              excerpt
               author {
                 id
                 name
@@ -93,6 +72,8 @@ export const pageQuery = graphql`
                   }
                 }
               }
+              content
+              excerpt
             }
           }
         }
