@@ -1,6 +1,14 @@
 module.exports = {
   siteMetadata: {
-    author: "@gregrickaby"
+    organization: {
+      name: "Greg Rickaby",
+      url: "https://gregrickaby.blog",
+      logo: "https://gregrickaby.blog/wp-content/uploads/2019/08/site-icon.png"
+    },
+    social: {
+      twitter: "@gregrickaby",
+      fbAppID: ""
+    }
   },
   plugins: [
     "gatsby-plugin-react-helmet",
