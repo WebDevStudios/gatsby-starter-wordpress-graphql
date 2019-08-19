@@ -1,12 +1,8 @@
 # gatsby-starter-wordpress-graphql
 
-A bare-bones [Gatsby](https://gatsbyjs.org) starter powered by [WordPress](https://wordpress.org) and [GraphQL](https://graphql.org/)!
-
-Demo: https://gatsby-starter-wordpress-graphql.netlify.com
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ee5783b5-a642-46e9-bd0d-35866c7c55e3/deploy-status)](https://app.netlify.com/sites/gatsby-starter-wordpress-graphql/deploys)
 
-## Description
+A bare-bones [Gatsby](https://gatsbyjs.org) starter powered by [WordPress](https://wordpress.org) and [WPGraphQL](https://www.wpgraphql.com/)!
 
 Includes support for:
 
@@ -15,40 +11,44 @@ Includes support for:
 - Posts
 - Pages
 - Category, Tag, and Author archives
-- [React Helmet](https://github.com/nfl/react-helmet) for basic SEO.
+- Basic SEO
 - _Sorry, WordPress comments don't work just yet._
+
+👉🏻[View Demo](https://gatsby-starter-wordpress-graphql.netlify.com)
 
 ## Development
 
-### Before you start
+All you need is a WordPress install with the [WPGraphQL plugin](https://www.wpgraphql.com/) installed and activated.
 
-You will need a WordPress site with the [WPGraphQL](https://www.wpgraphql.com/) plugin installed and activated.
-
-### Get Started
-
-**Download**
+### Download
 ```bash
 gatsby new <project-name> https://github.com/gregrickaby/gatsby-starter-wordpress-graphql
 ```
 
-**Configure**
+### Configure
 
-There are a few instances where you'll need to change the Site URL. Most of them are in `gatsby-config.js`, but there's also another one in `src/components/menu.js`
+There are a few instances where you'll need to change the Site URL. Most of them are in [gatsby-config.js](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/blob/master/gatsby-config.js), but there's also another one in `src/components/menu.js`
 
-**Develop**
+### Make it your own
+
+**Start Gatsby**
 ```bash
 yarn start
 ```
 
-**Deploy**
+**Clear Gatsby's cache and start fresh**
+```bash
+yarn clean
+```
+
+**Build**
 ```bash
 yarn buld
 ```
 
-**Clear cache and start fresh**
-```bash
-yarn clean
-```
+## Deployments
+
+The [demo](https://gatsby-starter-wordpress-graphql.netlify.com) is hosted  on [Netlify](https://www.netlify.com/) and deployments are triggered by commits to `master`. You could fork this repo and do the same, or use [Netlify Dev](https://www.netlify.com/products/dev/).
 
 ## Need help?
 Feel free to [create an issue](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/issues) or send me a [tweet](https://twitter.com/gregrickaby). Thanks to the awesome Gatsby community for all the help!
