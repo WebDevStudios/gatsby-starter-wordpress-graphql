@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
+import SEO from "../components/seo"
 import { Meta } from "../components/template-tags";
 
 class AuthorTemplate extends Component {
@@ -9,6 +10,7 @@ class AuthorTemplate extends Component {
 
     return (
       <Layout>
+        <SEO title={`Author - ${author.name}`} description={`A collection of posts from the ${author.name} archives.`} />
         <header>
           <h1>
             Author Archives: <span>{author.name}</span>
