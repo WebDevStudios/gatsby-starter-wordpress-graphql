@@ -2,13 +2,16 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import { Byline, Meta } from "../components/template-tags";
+import SEO from "../components/seo";
 
 class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpress.post;
+    const image = post.featuredImage ? post.featuredImage.sourceUrl : "";
 
     return (
       <Layout>
+        <SEO title={post.title} description={post.title} image={image} />
         <article id={post.id}>
           <header>
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
@@ -34,13 +37,17 @@ export const pageQuery = graphql`
         postId
         title
         status
-        content
         slug
+        date
         author {
           name
           slug
         }
         commentCount
+        featuredImage {
+          srcSet
+          sourceUrl
+        }
         categories {
           edges {
             node {
@@ -50,7 +57,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        date
         tags {
           edges {
             node {
@@ -60,6 +66,8 @@ export const pageQuery = graphql`
             }
           }
         }
+        content
+        excerpt
       }
     }
   }

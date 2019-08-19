@@ -48,10 +48,7 @@ const SEO = ({ title, description, image }) => (
             <meta property="og:type" content="article" />
             <meta property="og:title" content={docTitle} />
             <meta property="og:description" content={docDescription} />
-            <meta
-              property="og:image"
-              content={data.site.siteMetadata.organization.logo}
-            />
+            <meta property="og:image" content={docImage} />
             <meta
               property="fb:app_id"
               content={data.site.siteMetadata.social.fbAppID}
@@ -72,16 +69,15 @@ const SEO = ({ title, description, image }) => (
 );
 
 SEO.defaultProps = {
-  lang: "en",
-  meta: [],
-  description: ""
+  title: "",
+  description: "",
+  image: ""
 };
 
 SEO.propTypes = {
+  title: PropTypes.string,
   description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired
+  image: PropTypes.string
 };
 
 export default SEO;

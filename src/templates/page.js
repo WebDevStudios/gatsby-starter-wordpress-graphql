@@ -10,7 +10,6 @@ class PageTemplate extends Component {
 
     return (
       <Layout>
-        <pre>{JSON.stringify(page, null, 2)}</pre>
         <SEO title={page.title} description={page.excerpt} image={image} />
         <h1 dangerouslySetInnerHTML={{ __html: page.title }} />
         <div dangerouslySetInnerHTML={{ __html: page.content }} />
