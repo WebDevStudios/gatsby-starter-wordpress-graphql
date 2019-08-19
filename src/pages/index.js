@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
+import Byline from "../components/byline";
+import Meta from "../components/meta";
 
 class Home extends Component {
   render() {
@@ -14,26 +16,11 @@ class Home extends Component {
               <h2>
                 <Link to={post.node.slug}>{post.node.title}</Link>
               </h2>
+              <Byline props={post.node} />
             </header>
             <div dangerouslySetInnerHTML={{ __html: post.node.content }} />
             <footer>
-              <span>
-                <Link to={"/author/" + post.node.author.slug}>
-                  {post.node.author.name}
-                </Link>
-              </span>
-              <time>{post.node.date}</time>
-              <span>
-                {post.node.categories.edges.map(category => (
-                  <Link
-                    key={category.node.slug}
-                    to={"/category/" + category.node.slug}
-                  >
-                    {category.node.name}
-                  </Link>
-                ))}
-              </span>
-              <span>Comments</span>
+              <Meta props={post.node} />
             </footer>
           </article>
         ))}
@@ -52,8 +39,19 @@ export const pageQuery = graphql`
           node {
             id
             postId
+            title
+            date
             slug
             status
+            author {
+              name
+              slug
+            }
+            commentCount
+            featuredImage {
+              srcSet
+              sourceUrl
+            }
             categories {
               edges {
                 node {
@@ -64,13 +62,18 @@ export const pageQuery = graphql`
                 }
               }
             }
-            title
-            content
-            date
-            author {
-              name
-              slug
+            tags {
+              edges {
+                node {
+                  tagId
+                  name
+                  slug
+                  link
+                }
+              }
             }
+            content
+            excerpt
           }
         }
       }
