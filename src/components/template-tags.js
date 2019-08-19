@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 
 export const Byline = ({ props }) => (
   <>
-    <pre>{JSON.stringify(props, null, 2)}</pre>
     <time datetime={props.date} pubdate>
       Published on{" "}
       <Link to={props.slug} rel="bookmark">
