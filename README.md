@@ -27,7 +27,7 @@ gatsby new <project-name> https://github.com/gregrickaby/gatsby-starter-wordpres
 
 ### Configure
 
-There are a few instances where you'll need to change the Site URL. Most of them are in [gatsby-config.js](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/blob/master/gatsby-config.js), but there's also another one in `src/components/menu.js`
+There are a few instances where you'll need to change the Site URL. Most of them are in [gatsby-config.js](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/blob/master/gatsby-config.js), but there's also another one in `src/components/menu.js` (for now, see [#6](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/issues/6))
 
 ### Make it your own
 
@@ -35,6 +35,8 @@ There are a few instances where you'll need to change the Site URL. Most of them
 ```bash
 yarn start
 ```
+
+### Other commands
 
 **Clear Gatsby's cache and start fresh**
 ```bash
