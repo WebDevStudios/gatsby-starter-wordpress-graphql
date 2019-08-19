@@ -6,8 +6,8 @@ const Meta = ({ props }) => (
     Filed under{" "}
     <ul>
       {props.categories.edges.map(category => (
-        <li>
-          <Link key={category.node.slug} to={"/category/" + category.node.slug}>
+        <li key={category.node.slug}>
+          <Link to={"/category/" + category.node.slug}>
             {category.node.name}
           </Link>
         </li>
@@ -16,10 +16,8 @@ const Meta = ({ props }) => (
     and tagged with{" "}
     <ul>
       {props.tags.edges.map(tag => (
-        <li>
-          <Link key={tag.node.slug} to={"/tag/" + tag.node.slug}>
-            {tag.node.name}
-          </Link>
+        <li key={tag.node.slug}>
+          <Link to={"/tag/" + tag.node.slug}>{tag.node.name}</Link>
         </li>
       ))}
     </ul>

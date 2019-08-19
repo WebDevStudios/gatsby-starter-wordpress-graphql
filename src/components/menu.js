@@ -32,7 +32,7 @@ const Menu = () => (
                 ""
               );
               return (
-                <li>
+                <li key={item.node.url}>
                   <Link key={item.node.url} to={cleanURL}>
                     {item.node.label}
                   </Link>
