@@ -50,4 +50,8 @@ yarn buld
 The [demo](https://gatsby-starter-wordpress-graphql.netlify.com) is hosted  on [Netlify](https://www.netlify.com/) and deployments are triggered by commits to `master`. You could fork this repo and do the same, or use [Netlify Dev](https://www.netlify.com/products/dev/). If you wanted to automatically deploy when you publish new content in WordPress, try the [Deploy Netlify Webhook](https://wordpress.org/plugins/webhook-netlify-deploy/) plugin.
 
 ## Need help?
-Feel free to [create an issue](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/issues) or send me a [tweet](https://twitter.com/gregrickaby). Thanks to the awesome Gatsby community for all the help!
+Feel free to [create an issue](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/issues) or send me a [tweet](https://twitter.com/gregrickaby).
+
+## Props
+
+Thanks to the awesome Gatsby community for all the ❤️!
