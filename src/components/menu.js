@@ -21,13 +21,24 @@ const Menu = () => (
       return (
         <>
           <ul>
-            {data.wordpress.menuItems.edges.map(item => (
-              <li>
-                <Link key={item.node.url} to={item.node.url}>
-                  {item.node.label}
-                </Link>
-              </li>
-            ))}
+            {data.wordpress.menuItems.edges.map(item => {
+              // WordPress includes the entire Site URL in the payload
+              // and this is a quick/dirty hack to strip it out so we
+              // can leverage Gatsby Link.
+              // This can probably go away if this site were actually
+              // hosted on gregrickaby.blog. 🤷‍♀️
+              let cleanURL = item.node.url.replace(
+                "https://gregrickaby.blog",
+                ""
+              );
+              return (
+                <li>
+                  <Link key={item.node.url} to={cleanURL}>
+                    {item.node.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </>
       );
