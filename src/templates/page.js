@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 class PageTemplate extends Component {
   render() {
     const page = this.props.data.wordpress.page;
+    const image = page.featuredImage ? page.featuredImage.sourceUrl : "";
 
     return (
       <Layout>
+        <pre>{JSON.stringify(page, null, 2)}</pre>
+        <SEO title={page.title} description={page.excerpt} image={image} />
         <h1 dangerouslySetInnerHTML={{ __html: page.title }} />
         <div dangerouslySetInnerHTML={{ __html: page.content }} />
       </Layout>
@@ -22,7 +26,12 @@ export const pageQuery = graphql`
     wordpress {
       page(id: $id) {
         title
+        featuredImage {
+          srcSet
+          sourceUrl
+        }
         content
+        excerpt
       }
     }
   }

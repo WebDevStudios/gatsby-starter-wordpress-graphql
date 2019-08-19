@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import { Helmet } from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
-  const { wordpress } = useStaticQuery(
-    graphql`
-      query {
+const SEO = ({ title, description, image }) => (
+  <StaticQuery
+    query={graphql`
+      {
         wordpress {
           generalSettings {
             title
@@ -15,59 +15,61 @@ function SEO({ description, lang, meta, title }) {
         }
         site {
           siteMetadata {
-            author
+            organization {
+              logo
+              name
+              url
+            }
+            social {
+              fbAppID
+              twitter
+            }
           }
         }
       }
-    `
-  );
+    `}
+    render={data => {
+      const docTitle = title || data.wordpress.generalSettings.title || "";
+      const docDescription =
+        description || data.wordpress.generalSettings.description || "";
+      const docImage = image || data.site.siteMetadata.organization.logo || "";
 
-  const metaDescription = description || wordpress.siteMetadata.description;
+      return (
+        <>
+          <Helmet>
+            <title>{docTitle}</title>
+            <meta name="description" content={docDescription} />
+            <link rel="canonical" href="{data.wordpress.generalSettings.url}" />
 
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang
-      }}
-      title={title}
-      titleTemplate={`%s | ${wordpress.siteMetadata.title}`}
-      meta={[
-        {
-          name: "description",
-          content: metaDescription
-        },
-        {
-          property: "og:title",
-          content: title
-        },
-        {
-          property: "og:description",
-          content: metaDescription
-        },
-        {
-          property: "og:type",
-          content: "website"
-        },
-        {
-          name: "twitter:card",
-          content: "summary"
-        },
-        {
-          name: "twitter:creator",
-          content: wordpress.siteMetadata.author
-        },
-        {
-          name: "twitter:title",
-          content: title
-        },
-        {
-          name: "twitter:description",
-          content: metaDescription
-        }
-      ].concat(meta)}
-    />
-  );
-}
+            <meta
+              property="og:url"
+              content={data.site.siteMetadata.organization.url}
+            />
+            <meta property="og:type" content="article" />
+            <meta property="og:title" content={docTitle} />
+            <meta property="og:description" content={docDescription} />
+            <meta
+              property="og:image"
+              content={data.site.siteMetadata.organization.logo}
+            />
+            <meta
+              property="fb:app_id"
+              content={data.site.siteMetadata.social.fbAppID}
+            />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta
+              name="twitter:creator"
+              content={data.site.siteMetadata.social.twitter}
+            />
+            <meta name="twitter:title" content={docTitle} />
+            <meta name="twitter:description" content={docDescription} />
+            <meta name="twitter:image" content={docImage} />
+          </Helmet>
+        </>
+      );
+    }}
+  />
+);
 
 SEO.defaultProps = {
   lang: "en",
