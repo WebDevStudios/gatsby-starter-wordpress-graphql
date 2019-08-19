@@ -24,19 +24,14 @@ You will need a WordPress site with the [WPGraphQL](https://www.wpgraphql.com/) 
 
 ### Get Started
 
-**Clone**
+**Download**
 ```bash
-git clone https://github.com/gregrickaby/gatsby-graphql-wordpress-starter.git
-```
-
-**Install**
-```bash
-yarn install
+gatsby new <project-name> https://github.com/gregrickaby/gatsby-starter-wordpress-graphql
 ```
 
 **Configure**
 
-Throughout this starter, there are a few instances where you'll need to change the Site URL. Most of them are in `gatsby-config.js`, but there's also another in `src/components/menu.js`
+There are a few instances where you'll need to change the Site URL. Most of them are in `gatsby-config.js`, but there's also another one in `src/components/menu.js`
 
 **Develop**
 ```bash
