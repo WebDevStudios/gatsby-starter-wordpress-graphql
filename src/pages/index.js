@@ -9,7 +9,7 @@ class Home extends Component {
     return (
       <Layout>
         {posts.edges.map(post => (
-          <article>
+          <article key={post.node.id}>
             <header>
               <h2>
                 <Link to={post.node.slug}>{post.node.title}</Link>
@@ -25,7 +25,10 @@ class Home extends Component {
               <time>{post.node.date}</time>
               <span>
                 {post.node.categories.edges.map(category => (
-                  <Link to={"/category/" + category.node.slug}>
+                  <Link
+                    key={category.node.slug}
+                    to={"/category/" + category.node.slug}
+                  >
                     {category.node.name}
                   </Link>
                 ))}
