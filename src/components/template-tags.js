@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 
 export const Byline = ({ props }) => (
   <>
-    <time datetime={props.date} pubdate>
+    <time dateTime={props.date} pubdate>
       Published on{" "}
       <Link to={props.slug} rel="bookmark">
         {props.date}
