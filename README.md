@@ -1,17 +1,18 @@
-# gatsby-graphql-wordpress-starter
+# gatsby-starter-wordpress-graphql
 
-A [Gatsby](https://gatsbyjs.org) starter powered by [GraphQL](https://graphql.org/) and [WordPress](https://wordpress.org)! Check out the demo: https://gatsby-graphql-wordpress-starter.netlify.com/
+A [Gatsby](https://gatsbyjs.org) starter powered by [WordPress](https://wordpress.org) and [GraphQL](https://graphql.org/)! Check out the demo: https://gatsby-starter-wordpress-graphql.netlify.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ee5783b5-a642-46e9-bd0d-35866c7c55e3/deploy-status)](https://app.netlify.com/sites/gatsby-graphql-wordpress-starter/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ee5783b5-a642-46e9-bd0d-35866c7c55e3/deploy-status)](https://app.netlify.com/sites/gatsby-starter-wordpress-graphql/deploys)
 
 ## Description
 
-A barebones starter to help you get up and running quickly. Includes support for:
+Includes support for:
 
 - Gutenberg
+- Menus
 - Posts
 - Pages
-- Category, Tag, and Author archivies
+- Category, Tag, and Author archives
 - [React Helmet](https://github.com/nfl/react-helmet) for basic SEO.
 - _Sorry, WordPress comments don't work just yet._
 
@@ -35,10 +36,7 @@ yarn install
 
 **Configure**
 
-Open `gatsby-config.js` and change the URL to your WordPress site, with the `/graphql` endpoint.
-```js
-url: "https://your-website.com/graphql",
-```
+Throughout this starter, there are a few instances where you'll need to change the Site URL. Most of them are in `gatsby-config.js`, but there's also another in `src/components/menu.js`
 
 **Develop**
 ```bash
@@ -56,4 +54,4 @@ yarn clean
 ```
 
 ## Need help?
-Feel free to [create an issue](https://github.com/gregrickaby/gatsby-graphql-wordpress/issues) or send me a [tweet](https://twitter.com/gregrickaby). Thanks to the awesome Gatsby community for all the help!
+Feel free to [create an issue](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/issues) or send me a [tweet](https://twitter.com/gregrickaby). Thanks to the awesome Gatsby community for all the help!
