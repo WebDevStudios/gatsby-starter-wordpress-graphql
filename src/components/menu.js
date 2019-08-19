@@ -20,11 +20,15 @@ const Menu = () => (
     render={data => {
       return (
         <>
-          {data.wordpress.menuItems.edges.map(item => (
-            <Link key={item.node.url} to={item.node.url}>
-              {item.node.label}
-            </Link>
-          ))}
+          <ul>
+            {data.wordpress.menuItems.edges.map(item => (
+              <li>
+                <Link key={item.node.url} to={item.node.url}>
+                  {item.node.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </>
       );
     }}
