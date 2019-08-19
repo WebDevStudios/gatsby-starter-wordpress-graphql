@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
-import { Byline, Meta } from "../components/template-tags";
 import SEO from "../components/seo";
+import Byline from "../components/byline";
+import Meta from "../components/meta";
 
 class PostTemplate extends Component {
   render() {

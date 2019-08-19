@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
-import SEO from "../components/seo"
-import { Meta } from "../components/template-tags";
+import SEO from "../components/seo";
+import Meta from "../components/meta";
 
 class CategoryTemplate extends Component {
   render() {
@@ -10,7 +10,12 @@ class CategoryTemplate extends Component {
 
     return (
       <Layout>
-        <SEO title={`Category - ${category.name}`} description={`A collection of posts from the ${category.name} category.`} />
+        <SEO
+          title={`Category - ${category.name}`}
+          description={`A collection of posts from the ${
+            category.name
+          } category.`}
+        />
         <header>
           <h1>
             Category Archives: <span>{category.name}</span>

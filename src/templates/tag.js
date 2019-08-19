@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
-import SEO from "../components/seo"
-import { Meta } from "../components/template-tags";
+import SEO from "../components/seo";
+import Meta from "../components/meta";
 
 class TagTemplate extends Component {
   render() {
@@ -10,7 +10,10 @@ class TagTemplate extends Component {
 
     return (
       <Layout>
-        <SEO title={`Tag - ${tag.name}`} description={`A collection of posts from the ${tag.name} tag.`} />
+        <SEO
+          title={`Tag - ${tag.name}`}
+          description={`A collection of posts from the ${tag.name} tag.`}
+        />
         <header>
           <h1>
             Tag Archives: <span>{tag.name}</span>
