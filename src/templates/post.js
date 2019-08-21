@@ -4,7 +4,11 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Byline from "../components/byline";
 import Meta from "../components/meta";
-import Paragraph from "../components/blocks/paragraph";
+import {
+  CoreCodeBlock,
+  CoreHeadingBlock,
+  CoreParagraphBlock
+} from "wp-block-components";
 
 class PostTemplate extends Component {
   render() {
@@ -21,8 +25,13 @@ class PostTemplate extends Component {
           </header>
           {post.blocks.map(block => {
             switch (block.__typename) {
+              case "WordPress_CoreHeadingBlock":
+                return <CoreHeadingBlock attributes={block.attributes} />;
               case "WordPress_CoreParagraphBlock":
-                return <Paragraph block={block} />;
+                return <CoreParagraphBlock attributes={block.attributes} />;
+              case "WordPress_CoreCodeBlock":
+                return <CoreCodeBlock attributes={block.attributes} />;
+
               default:
                 return ``;
             }
@@ -80,14 +89,52 @@ export const pageQuery = graphql`
           ... on WordPress_CoreParagraphBlock {
             attributes {
               ... on WordPress_CoreParagraphBlockAttributesV3 {
-                ...ParagraphInfo
+                ...ParagraphAtts
               }
             }
+          }
+          ... on WordPress_CoreHeadingBlock {
+            ...HeadingAtts
           }
         }
         content
         excerpt
       }
+    }
+  }
+
+  fragment ParagraphAtts on WordPress_CoreParagraphBlockAttributesV3 {
+    align
+    backgroundColor
+    content
+    className
+    customBackgroundColor
+    customFontSize
+    customTextColor
+    direction
+    dropCap
+    fontSize
+    placeholder
+    textColor
+  }
+
+  fragment HeadingAtts on WordPress_CoreHeadingBlock {
+    attributes {
+      align
+      anchor
+      className
+      content
+      customTextColor
+      level
+      placeholder
+      textColor
+    }
+  }
+
+  fragment CodeAtts on WordPress_CoreCodeBlock {
+    attributes {
+      className
+      content
     }
   }
 `;
