@@ -13,7 +13,6 @@ class PostTemplate extends Component {
 
     return (
       <Layout>
-        {/* <pre>{JSON.stringify(post, null, 2)}</pre> */}
         <SEO title={post.title} description={post.title} image={image} />
         <article id={post.id}>
           <header>
@@ -36,8 +35,6 @@ class PostTemplate extends Component {
     );
   }
 }
-
-function displayBlock(blockType) {}
 
 export default PostTemplate;
 
