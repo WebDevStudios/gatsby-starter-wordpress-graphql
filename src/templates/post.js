@@ -11,9 +11,9 @@ import {
 } from "wp-block-components";
 
 const BlockComponents = {
-  WPGraphQL_CoreCodeBlock: CoreCodeBlock,
-  WPGraphQL_CoreHeadingBlock: CoreHeadingBlock,
-  WPGraphQL_CoreParagraphBLock: CoreParagraphBlock
+  WordPress_CoreCodeBlock: CoreCodeBlock,
+  WordPress_CoreHeadingBlock: CoreHeadingBlock,
+  WordPress_CoreParagraphBlock: CoreParagraphBlock
 };
 
 class PostTemplate extends Component {
@@ -29,17 +29,18 @@ class PostTemplate extends Component {
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
             <Byline props={post} />
           </header>
-          {post.blocks.map(block => {
-            switch (block.__typename) {
-              case "WordPress_CoreHeadingBlock":
-                return <CoreHeadingBlock attributes={block.attributes} />;
-              case "WordPress_CoreParagraphBlock":
-                return <CoreParagraphBlock attributes={block.attributes} />;
-              case "WordPress_CoreCodeBlock":
-                return <CoreCodeBlock attributes={block.attributes} />;
-
-              default:
-                return ``;
+          {post.blocks.map((block, index) => {
+            const typename = block.__typename;
+            if (BlockComponents[typename]) {
+              const Block = BlockComponents[typename];
+              return (
+                <>
+                  <pre>{JSON.stringify(block, null, 2)}</pre>
+                  <Block key={index} attributes={block.attributes} />;
+                </>
+              );
+            } else {
+              return null;
             }
           })}
           <footer>
@@ -98,7 +99,7 @@ export const pageQuery = graphql`
           ... on WordPress_CoreParagraphBlock {
             paragraphBlockAtts: attributes {
               ... on WordPress_CoreParagraphBlockAttributesV3 {
-                ...ParagraphBlockAtts
+                ...CoreParagraphBlock
               }
             }
           }
@@ -113,13 +114,13 @@ export const pageQuery = graphql`
   }
 
   fragment CodeBlockAtts on WordPress_CoreCodeBlock {
-    codeBlockProps: attributes {
+    CoreCodeBlock: attributes {
       className
       content
     }
   }
 
-  fragment ParagraphBlockAtts on WordPress_CoreParagraphBlockAttributesV3 {
+  fragment CoreParagraphBlock on WordPress_CoreParagraphBlockAttributesV3 {
     align
     backgroundColor
     className
@@ -135,7 +136,7 @@ export const pageQuery = graphql`
   }
 
   fragment HeadingBlockAtts on WordPress_CoreHeadingBlock {
-    headingBlockProps: attributes {
+    CoreHeadingBlock: attributes {
       align
       anchor
       className
