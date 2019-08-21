@@ -35,6 +35,8 @@ class PostTemplate extends Component {
               const Block = BlockComponents[typename];
               return (
                 <>
+                  {/* can't use block.attributes, because I have to use an alias on the attributes fields.
+              need to figure out how to pull in the attributes alias dynamically. */}
                   <pre>{JSON.stringify(block, null, 2)}</pre>
                   <Block key={index} attributes={block.attributes} />;
                 </>
