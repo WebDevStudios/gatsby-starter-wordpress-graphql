@@ -86,28 +86,36 @@ export const pageQuery = graphql`
         }
         blocks {
           name
+          ... on WordPress_CoreCodeBlock {
+            ...CodeBlockAtts
+          }
           ... on WordPress_CoreParagraphBlock {
-            attributes {
+            paragraphBlockAtts: attributes {
               ... on WordPress_CoreParagraphBlockAttributesV3 {
-                ...ParagraphAtts
+                ...ParagraphBlockAtts
               }
             }
           }
           ... on WordPress_CoreHeadingBlock {
-            ...HeadingAtts
+            ...HeadingBlockAtts
           }
         }
-        content
-        excerpt
       }
     }
   }
 
-  fragment ParagraphAtts on WordPress_CoreParagraphBlockAttributesV3 {
+  fragment CodeBlockAtts on WordPress_CoreCodeBlock {
+    codeBlockProps: attributes {
+      className
+      content
+    }
+  }
+
+  fragment ParagraphBlockAtts on WordPress_CoreParagraphBlockAttributesV3 {
     align
     backgroundColor
-    content
     className
+    content
     customBackgroundColor
     customFontSize
     customTextColor
@@ -118,8 +126,8 @@ export const pageQuery = graphql`
     textColor
   }
 
-  fragment HeadingAtts on WordPress_CoreHeadingBlock {
-    attributes {
+  fragment HeadingBlockAtts on WordPress_CoreHeadingBlock {
+    headingBlockProps: attributes {
       align
       anchor
       className
@@ -128,13 +136,6 @@ export const pageQuery = graphql`
       level
       placeholder
       textColor
-    }
-  }
-
-  fragment CodeAtts on WordPress_CoreCodeBlock {
-    attributes {
-      className
-      content
     }
   }
 `;
