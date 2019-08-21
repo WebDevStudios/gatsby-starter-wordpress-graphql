@@ -100,6 +100,8 @@ export const pageQuery = graphql`
             ...HeadingBlockAtts
           }
         }
+        content
+        excerpt
       }
     }
   }
