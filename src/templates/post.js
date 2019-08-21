@@ -10,6 +10,12 @@ import {
   CoreParagraphBlock
 } from "wp-block-components";
 
+const BlockComponents = {
+  WPGraphQL_CoreCodeBlock: CoreCodeBlock,
+  WPGraphQL_CoreHeadingBlock: CoreHeadingBlock,
+  WPGraphQL_CoreParagraphBLock: CoreParagraphBlock
+};
+
 class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpress.post;

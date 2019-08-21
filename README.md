@@ -18,7 +18,7 @@ Includes support for:
 
 ## Development
 
-All you need is a WordPress install with the [WPGraphQL plugin](https://www.wpgraphql.com/) installed and activated.
+All you need is a WordPress install with the [WPGraphQL](https://www.wpgraphql.com/) and [WPGraphQL Gutenberg](https://github.com/pristas-peter/wp-graphql-gutenberg) plugins installed and activated.
 
 ### Download
 ```bash
