@@ -40,33 +40,13 @@ export const pageQuery = graphql`
         status
         slug
         date
-        author {
-          name
-          slug
-        }
+        ...AuthorQuery
         commentCount
         featuredImage {
           srcSet
           sourceUrl
         }
-        categories {
-          edges {
-            node {
-              id
-              name
-              slug
-            }
-          }
-        }
-        tags {
-          edges {
-            node {
-              name
-              id
-              slug
-            }
-          }
-        }
+        ...TaxonomyQuery
         content
         excerpt
       }

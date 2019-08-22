@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 
 const Byline = ({ props }) => (
   <>
@@ -21,3 +21,12 @@ const Byline = ({ props }) => (
 );
 
 export default Byline;
+
+export const query = graphql`
+  fragment AuthorQuery on WordPress_Post {
+    author {
+      name
+      slug
+    }
+  }
+`;

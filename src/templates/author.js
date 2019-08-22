@@ -55,24 +55,8 @@ export const pageQuery = graphql`
               status
               title
               date
-              categories {
-                edges {
-                  node {
-                    name
-                    description
-                    slug
-                  }
-                }
-              }
-              tags {
-                edges {
-                  node {
-                    id
-                    name
-                    slug
-                  }
-                }
-              }
+              ...AuthorQuery
+              ...TaxonomyQuery
               content
               excerpt
             }
