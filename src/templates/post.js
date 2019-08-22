@@ -33,14 +33,7 @@ class PostTemplate extends Component {
             const typename = block.__typename;
             if (BlockComponents[typename]) {
               const Block = BlockComponents[typename];
-              return (
-                <>
-                  {/* can't use block.attributes, because I have to use an alias on the attributes fields.
-              need to figure out how to pull in the attributes alias dynamically. */}
-                  <pre>{JSON.stringify(block, null, 2)}</pre>
-                  <Block key={index} attributes={block.attributes} />;
-                </>
-              );
+              return <Block key={index} attributes={block.attributes} />;
             } else {
               return null;
             }
@@ -61,9 +54,7 @@ export const pageQuery = graphql`
     wordpress {
       post(id: $id) {
         id
-        postId
         title
-        status
         slug
         date
         author {
@@ -74,6 +65,12 @@ export const pageQuery = graphql`
         featuredImage {
           srcSet
           sourceUrl
+        }
+        blocks {
+          __typename
+          ...CoreCodeBlock
+          ...CoreHeadingBlock
+          ...CoreParagraphBlock
         }
         categories {
           edges {
@@ -93,60 +90,52 @@ export const pageQuery = graphql`
             }
           }
         }
-        blocks {
-          name
-          ... on WordPress_CoreCodeBlock {
-            ...CodeBlockAtts
-          }
-          ... on WordPress_CoreParagraphBlock {
-            paragraphBlockAtts: attributes {
-              ... on WordPress_CoreParagraphBlockAttributesV3 {
-                ...CoreParagraphBlock
-              }
-            }
-          }
-          ... on WordPress_CoreHeadingBlock {
-            ...HeadingBlockAtts
-          }
-        }
-        content
-        excerpt
       }
     }
   }
 
-  fragment CodeBlockAtts on WordPress_CoreCodeBlock {
-    CoreCodeBlock: attributes {
-      className
-      content
+  fragment CoreCodeBlock on WordPress_CoreCodeBlock {
+    name
+    attributes {
+      __typename
+      ... on WordPress_CoreCodeBlockAttributes {
+        className
+        codeContent: content
+      }
     }
   }
 
-  fragment CoreParagraphBlock on WordPress_CoreParagraphBlockAttributesV3 {
-    align
-    backgroundColor
-    className
-    content
-    customBackgroundColor
-    customFontSize
-    customTextColor
-    direction
-    dropCap
-    fontSize
-    placeholder
-    textColor
+  fragment CoreHeadingBlock on WordPress_CoreHeadingBlock {
+    name
+    attributes {
+      __typename
+      ... on WordPress_CoreHeadingBlockAttributes {
+        align
+        anchor
+        className
+        content
+        level
+      }
+    }
   }
 
-  fragment HeadingBlockAtts on WordPress_CoreHeadingBlock {
-    CoreHeadingBlock: attributes {
-      align
-      anchor
-      className
-      content
-      customTextColor
-      level
-      placeholder
-      textColor
+  fragment CoreParagraphBlock on WordPress_CoreParagraphBlock {
+    name
+    attributes {
+      __typename
+      ... on WordPress_CoreParagraphBlockAttributesV3 {
+        align
+        backgroundColor
+        className
+        content
+        customBackgroundColor
+        customFontSize
+        customTextColor
+        direction
+        dropCap
+        fontSize
+        textColor
+      }
     }
   }
 `;
