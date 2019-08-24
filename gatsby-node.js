@@ -1,13 +1,16 @@
 // Grab some packages from Node.
 const path = require("path");
 const slash = require("slash");
+const { createRemoteFileNode } = require("gatsby-source-filesystem");
 
 /**
  * Programmatically create posts, pages, and the archives.
+ * @link https://www.gatsbyjs.org/docs/node-apis/#createPages
  */
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
+  // Run a GraphQL query.
   const result = await graphql(`
     query {
       wordpress {
@@ -67,10 +70,12 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  // Error checking.
   if (result.errors) {
     throw new Error(result.errors);
   }
 
+  // Destructure data.
   const { posts, pages, categories, tags, users } = result.data.wordpress;
 
   // Create posts.
@@ -132,5 +137,38 @@ exports.createPages = async ({ graphql, actions }) => {
         id: edge.node.id
       }
     });
+  });
+};
+
+/**
+ * Download WordPress images, so we can use Gatsby <Img>.
+ * @link https://www.gatsbyjs.org/docs/node-apis/#createResolvers
+ * @link https://www.gatsbyjs.org/packages/gatsby-source-filesystem/?=#createremotefilenode
+ */
+exports.createResolvers = async ({
+  actions,
+  cache,
+  createNodeId,
+  createResolvers,
+  store,
+  reporter
+}) => {
+  const { createNode } = actions;
+  await createResolvers({
+    WordPress_MediaItem: {
+      imageFile: {
+        type: "File",
+        resolve(source, args, context, info) {
+          return createRemoteFileNode({
+            url: source.sourceUrl,
+            store,
+            cache,
+            createNode,
+            createNodeId,
+            reporter
+          });
+        }
+      }
+    }
   });
 };
