@@ -141,7 +141,7 @@ exports.createPages = async ({ graphql, actions }) => {
 };
 
 /**
- * Download WordPress images, so we can use Gatsby <Img>.
+ * Download WordPress images, add them to GraphQL schema.
  * @link https://www.gatsbyjs.org/docs/node-apis/#createResolvers
  * @link https://www.gatsbyjs.org/packages/gatsby-source-filesystem/?=#createremotefilenode
  */
@@ -150,25 +150,24 @@ exports.createResolvers = async ({
   cache,
   createNodeId,
   createResolvers,
-  store,
-  reporter
+  store
 }) => {
   const { createNode } = actions;
-  await createResolvers({
+  const resolvers = {
     WordPress_MediaItem: {
       imageFile: {
         type: "File",
-        resolve(source, args, context, info) {
+        resolve: source => {
           return createRemoteFileNode({
-            url: source.sourceUrl,
-            store,
             cache,
             createNode,
             createNodeId,
-            reporter
+            store,
+            url: source.sourceUrl
           });
         }
       }
     }
-  });
+  };
+  await createResolvers(resolvers);
 };
