@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import Byline from "../components/byline";
 import Meta from "../components/meta";
 import FeaturedImage from "../components/featured";
+import { CoreBlock } from "wp-block-components";
 
 class PostTemplate extends Component {
   render() {
@@ -20,7 +21,13 @@ class PostTemplate extends Component {
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
             <Byline props={post} />
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.content }} />
+          {post.blocks.map((block, index) => {
+            if ("WordPress_CoreCodeBlock" === block.__typename) {
+              block.attributes.content = block.attributes.codeContent;
+              delete block.attributes.codeContent;
+            }
+            return <CoreBlock key={index} block={block} />;
+          })}
           <footer>
             <Meta props={post} />
           </footer>
@@ -46,8 +53,99 @@ export const pageQuery = graphql`
         commentCount
         ...FeaturedImageQuery
         ...TaxonomyQuery
+        blocks {
+          __typename
+          ...CoreCodeBlock
+          ...CoreHeadingBlock
+          ...CoreImageBlock
+          ...CoreListBlock
+          ...CoreParagraphBlock
+        }
         content
         excerpt
+      }
+    }
+  }
+`;
+
+export const CoreCodeBlockFragment = graphql`
+  fragment CoreCodeBlock on WordPress_CoreCodeBlock {
+    name
+    attributes {
+      __typename
+      ... on WordPress_CoreCodeBlockAttributes {
+        className
+        codeContent: content
+      }
+    }
+  }
+`;
+
+export const CoreHeadingBlockFragment = graphql`
+  fragment CoreHeadingBlock on WordPress_CoreHeadingBlock {
+    name
+    attributes {
+      __typename
+      ... on WordPress_CoreHeadingBlockAttributes {
+        align
+        anchor
+        className
+        content
+        level
+      }
+    }
+  }
+`;
+
+export const CoreImageBlockFragment = graphql`
+  fragment CoreImageBlock on WordPress_CoreImageBlock {
+    name
+    attributes {
+      __typename
+      align
+      alt
+      caption
+      className
+      height
+      href
+      linkClass
+      linkDestination
+      linkTarget
+      rel
+      url
+      width
+    }
+  }
+`;
+export const CoreListBlockFragment = graphql`
+  fragment CoreListBlock on WordPress_CoreListBlock {
+    name
+    attributes {
+      __typename
+      className
+      ordered
+      values
+    }
+  }
+`;
+
+export const CoreParagraphBlockFragment = graphql`
+  fragment CoreParagraphBlock on WordPress_CoreParagraphBlock {
+    name
+    attributes {
+      __typename
+      ... on WordPress_CoreParagraphBlockAttributesV3 {
+        align
+        backgroundColor
+        className
+        content
+        customBackgroundColor
+        customFontSize
+        customTextColor
+        direction
+        dropCap
+        fontSize
+        textColor
       }
     }
   }
