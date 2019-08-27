@@ -6,13 +6,13 @@ A bare-bones [Gatsby](https://gatsbyjs.org) starter powered by [WordPress](https
 
 Includes support for:
 
-- Gutenberg
+- Gutenberg via [wp-block-components](https://github.com/danielmilner/wp-block-components)
 - Menus
 - Posts
 - Pages
 - Category, Tag, and Author archives
 - Basic SEO
-- _Sorry, WordPress comments don't work just yet._
+- _Sorry, neither WordPress comments nor search don't work just yet. But I welcome your contributions!_
 
 👉🏻[View Demo](https://gatsby-starter-wordpress-graphql.netlify.com)
 
@@ -34,13 +34,13 @@ There are a few instances where you'll need to change the Site URL. Most of them
 yarn start
 ```
 
-### Other commands
+### Other handy CLI commands
 **Clear Gatsby's cache and start fresh**
 ```bash
 yarn clean
 ```
 
-**Build**
+**Build/Test before a deployment**
 ```bash
 yarn buld
 ```
