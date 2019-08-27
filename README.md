@@ -42,7 +42,7 @@ yarn clean
 
 **Build/Test before a deployment**
 ```bash
-yarn buld
+yarn build
 ```
 
 ## Deployments
