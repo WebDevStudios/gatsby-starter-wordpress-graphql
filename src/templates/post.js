@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Byline from "../components/byline";
 import Meta from "../components/meta";
-import FeaturedImage from "../components/featuredImage";
+import FeaturedImage from "../components/featured";
 
 class PostTemplate extends Component {
   render() {
@@ -16,7 +16,7 @@ class PostTemplate extends Component {
         <SEO title={post.title} description={post.title} image={seoImage} />
         <article id={post.id}>
           <header>
-            <FeaturedImage props={post.featuredImage} />
+            <FeaturedImage props={post} />
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
             <Byline props={post} />
           </header>
