@@ -16,6 +16,8 @@ Includes support for:
 
 👉🏻[View Demo](https://gatsby-starter-wordpress-graphql.netlify.com)
 
+<a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. WordPress for big brands."></a>
+
 ## Development
 
 All you need is a WordPress install with the [WPGraphQL](https://www.wpgraphql.com/) and [WPGraphQL Gutenberg](https://github.com/pristas-peter/wp-graphql-gutenberg) plugins installed and activated.
