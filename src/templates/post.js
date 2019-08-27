@@ -4,17 +4,19 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Byline from "../components/byline";
 import Meta from "../components/meta";
+import FeaturedImage from "../components/featured";
 
 class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpress.post;
-    const image = post.featuredImage ? post.featuredImage.sourceUrl : "";
+    const seoImage = post.featuredImage ? post.featuredImage.sourceUrl : "";
 
     return (
       <Layout>
-        <SEO title={post.title} description={post.title} image={image} />
+        <SEO title={post.title} description={post.title} image={seoImage} />
         <article id={post.id}>
           <header>
+            <FeaturedImage props={post} />
             <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
             <Byline props={post} />
           </header>
@@ -42,10 +44,7 @@ export const pageQuery = graphql`
         date
         ...AuthorQuery
         commentCount
-        featuredImage {
-          srcSet
-          sourceUrl
-        }
+        ...FeaturedImageQuery
         ...TaxonomyQuery
         content
         excerpt
