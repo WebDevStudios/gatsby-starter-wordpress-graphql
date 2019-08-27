@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 
 const Meta = ({ props }) => (
   <>
@@ -25,3 +25,26 @@ const Meta = ({ props }) => (
 );
 
 export default Meta;
+
+export const query = graphql`
+  fragment TaxonomyQuery on WordPress_Post {
+    categories {
+      edges {
+        node {
+          id
+          name
+          slug
+        }
+      }
+    }
+    tags {
+      edges {
+        node {
+          name
+          id
+          slug
+        }
+      }
+    }
+  }
+`;

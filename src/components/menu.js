@@ -4,7 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby";
 const Menu = () => (
   <StaticQuery
     query={graphql`
-      {
+      query MenuQuery {
         wordpress {
           menuItems(where: { location: PRIMARY }) {
             edges {
