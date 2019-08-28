@@ -15,6 +15,11 @@ const Menu = () => (
             }
           }
         }
+        wordpress {
+          generalSettings {
+            url
+          }
+        }
       }
     `}
     render={data => {
@@ -22,13 +27,8 @@ const Menu = () => (
         <>
           <ul>
             {data.wordpress.menuItems.edges.map(item => {
-              // WordPress includes the entire Site URL in the payload
-              // and this is a quick/dirty hack to strip it out so we
-              // can leverage Gatsby Link.
-              // This can probably go away if this site were actually
-              // hosted on gregrickaby.blog. 🤷‍♀️
               let cleanURL = item.node.url.replace(
-                "https://gregrickaby.blog",
+                data.wordpress.generalSettings.url,
                 ""
               );
               return (
