@@ -14,11 +14,14 @@ class Home extends Component {
           <article key={post.node.id}>
             <header>
               <h2>
-                <Link to={post.node.slug}>{post.node.title}</Link>
+                <Link
+                  to={post.node.slug}
+                  dangerouslySetInnerHTML={{ __html: post.node.title }}
+                />
               </h2>
               <Byline props={post.node} />
             </header>
-            <div dangerouslySetInnerHTML={{ __html: post.node.content }} />
+            <section dangerouslySetInnerHTML={{ __html: post.node.content }} />
             <footer>
               <Meta props={post.node} />
             </footer>
