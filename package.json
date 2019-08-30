@@ -22,7 +22,7 @@
     "wp-block-components": "^0.2.0"
   },
   "repository": {
-    "url": "https://github.com/gregrickaby/gatsby-starter-wordpress-graphql"
+    "url": "https://github.com/webdevstudios/gatsby-starter-wordpress-graphql"
   },
   "license": "MIT",
   "keywords": [
