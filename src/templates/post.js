@@ -60,6 +60,10 @@ export const pageQuery = graphql`
           ...CoreImageBlock
           ...CoreListBlock
           ...CoreParagraphBlock
+          ...CoreGalleryBlock
+          ...CoreCoverBlock
+          ...CoreButtonBlock
+          ...CoreGravityFormsBlock
         }
         content
         excerpt
@@ -147,6 +151,72 @@ export const CoreParagraphBlockFragment = graphql`
         fontSize
         textColor
       }
+    }
+  }
+`;
+
+export const CoreGalleryBlockFragment = graphql`
+  fragment CoreGalleryBlock on WordPress_CoreGalleryBlock {
+    name
+    attributes {
+      __typename
+      ... on WordPress_CoreGalleryBlockAttributesV2 {
+        align
+        className
+        images
+        linkTo
+        columns
+        ids
+        imageCrop
+      }
+    }
+  }
+`;
+
+export const CoreCoverBlockFragment = graphql`
+  fragment CoreCoverBlock on WordPress_CoreCoverBlock {
+    name
+    attributes {
+      __typename
+      align
+      backgroundType
+      className
+      customOverlayColor
+      dimRatio
+      focalPoint
+      hasParallax
+      id
+      overlayColor
+      url
+    }
+  }
+`;
+
+export const CoreButtonBlockFragment = graphql`
+  fragment CoreButtonBlock on WordPress_CoreButtonBlock {
+    name
+    attributes {
+      __typename
+      align
+      backgroundColor
+      className
+      customBackgroundColor
+      customTextColor
+      text
+      textColor
+      title
+      url
+    }
+  }
+`;
+
+export const CoreGravityFormsBlockFragment = graphql`
+  fragment CoreGravityFormsBlock on WordPress_GravityformsFormBlock {
+    name
+    attributes {
+      __typename
+      formId
+      tabindex
     }
   }
 `;
