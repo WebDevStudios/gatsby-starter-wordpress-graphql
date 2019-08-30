@@ -18,20 +18,33 @@ Includes support for:
 
 <a href="https://webdevstudios.com/contact/"><img src="https://webdevstudios.com/wp-content/uploads/2018/04/wds-github-banner.png" alt="WebDevStudios. WordPress for big brands."></a>
 
-## Development
+## WordPress Prerequisites
 
-All you need is a WordPress install with the [WPGraphQL](https://www.wpgraphql.com/) and [WPGraphQL Gutenberg](https://github.com/pristas-peter/wp-graphql-gutenberg) plugins installed and activated.
+The following plugins are required to be activated on a WordPress website:
 
-### Download
+1) [WPGraphQL](https://www.wpgraphql.com/)
+2) [WPGraphQL Gutenberg](https://github.com/pristas-peter/wp-graphql-gutenberg)
+3) [Deploy Netlify Webhook](https://wordpress.org/plugins/webhook-netlify-deploy/)
+
+These plugins are optional:
+
+1) [WPGraphQL ACF](https://github.com/wp-graphql/wp-graphql-acf)
+2) [WPGraphQL Gravity Forms](https://github.com/harness-software/wp-graphql-gravity-forms)
+3) [WPGraphQL Yoast](https://github.com/ashhitch/wp-graphql-yoast-seo)
+
+
+## Gatsby Development
+
+### Download this starter
 ```bash
 gatsby new <project-name> https://github.com/gregrickaby/gatsby-starter-wordpress-graphql
 ```
 
 ### Configure
 
-There are a few instances where you'll need to change the Site URL. Most of them are in [gatsby-config.js](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/blob/master/gatsby-config.js), but there's also another one in `src/components/menu.js` (for now, see [#6](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/issues/6))
+Open `gatsby-config.js` and point the URLs at your WordPress websites.
 
-### Make it your own
+### Start a local development server
 ```bash
 yarn start
 ```
@@ -49,10 +62,10 @@ yarn build
 
 ## Deployments
 
-The [demo](https://gatsby-starter-wordpress-graphql.netlify.com) is hosted  on [Netlify](https://www.netlify.com/) and deployments are triggered by commits to `master`. You could fork this repo and do the same, or use [Netlify Dev](https://www.netlify.com/products/dev/). If you wanted to automatically deploy when you publish new content in WordPress, try the [Deploy Netlify Webhook](https://wordpress.org/plugins/webhook-netlify-deploy/) plugin.
+The [demo](https://gatsby-starter-wordpress-graphql.netlify.com) is hosted  on [Netlify](https://www.netlify.com/) and deployments are triggered by commits to `master` and with [Deploy Netlify Webhook](https://wordpress.org/plugins/webhook-netlify-deploy/).
 
-## Need help?
-Feel free to [create an issue](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/issues) or send me a [tweet](https://twitter.com/gregrickaby).
+## Contributing
+Feel free to [create an issue](https://github.com/gregrickaby/gatsby-starter-wordpress-graphql/issues) and read about how to [Contribute](https://github.com/WebDevStudios/gatsby-starter-wordpress-graphql/blob/master/.github/CONTRIBUTING.MD).
 
 ## Props
 

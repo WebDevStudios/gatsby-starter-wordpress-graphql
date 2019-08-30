@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
     organization: {
-      name: "Greg Rickaby",
-      url: "https://gregrickaby.blog",
-      logo: "https://gregrickaby.blog/wp-content/uploads/2019/08/site-icon.png"
+      name: "WebDevStudios",
+      url: "https://gatsby.wdslab.com",
+      logo: "http://gatsby.wdslab.com/wp-content/uploads/2019/08/wds-logo-small.png"
     },
     social: {
-      twitter: "@gregrickaby",
+      twitter: "@webdevstudios",
       fbAppID: ""
     }
   },
@@ -24,7 +24,7 @@ module.exports = {
       options: {
         typeName: "WordPress",
         fieldName: "wordpress",
-        url: "https://gregrickaby.blog/graphql",
+        url: "https://gatsby.wdslab.com/graphql",
         refetchInterval: 60
       }
     },
