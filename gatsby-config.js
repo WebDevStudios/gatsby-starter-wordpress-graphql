@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: "https://gatsby.wdslab.com",
     organization: {
       name: "WebDevStudios",
       url: "https://gatsby.wdslab.com",
@@ -29,6 +30,7 @@ module.exports = {
       }
     },
     "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp"
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-sitemap"
   ]
 };
