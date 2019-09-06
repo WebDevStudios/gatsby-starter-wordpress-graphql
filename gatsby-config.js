@@ -32,6 +32,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-emotion",
-    "gatsby-plugin-sitemap"
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-theme-ui",
   ]
 };
