@@ -8,14 +8,16 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.16",
+    "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.15",
-    "gatsby-plugin-emotion": "^4.1.4",
+    "@mdx-js/react": "^1.4.4",
     "gatsby": "^2.15.7",
     "gatsby-image": "^2.2.17",
+    "gatsby-plugin-emotion": "^4.1.4",
     "gatsby-plugin-react-helmet": "^3.1.6",
     "gatsby-plugin-sharp": "^2.2.19",
     "gatsby-plugin-sitemap": "^2.2.10",
+    "gatsby-plugin-theme-ui": "^0.2.41",
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-source-graphql": "^2.1.12",
     "gatsby-transformer-sharp": "^2.2.13",
@@ -23,6 +25,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "theme-ui": "^0.2.41",
     "wp-block-components": "^0.2.0"
   },
   "repository": {
