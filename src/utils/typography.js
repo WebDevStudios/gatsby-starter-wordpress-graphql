@@ -1,5 +1,5 @@
 import Typography from "typography"
-import { TABLET_LANDSCAPE } from "./test-breakpoints"
+import { TABLET_LANDSCAPE } from "./breakpoints"
 
 const typography = new Typography({
   baseFontSize: "16px",
@@ -33,7 +33,7 @@ const typography = new Typography({
     },
     [TABLET_LANDSCAPE]: {
       'h1': {
-        fontSize: '150px',
+        fontSize: '70px',
         color: 'rebeccapurple',
       },
     }
