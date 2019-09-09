@@ -18,6 +18,7 @@
     "gatsby-plugin-sharp": "^2.2.19",
     "gatsby-plugin-sitemap": "^2.2.10",
     "gatsby-plugin-theme-ui": "^0.2.41",
+    "gatsby-plugin-typography": "^2.3.6",
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-source-graphql": "^2.1.12",
     "gatsby-transformer-sharp": "^2.2.13",
@@ -25,7 +26,10 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-typography": "^0.16.19",
     "theme-ui": "^0.2.41",
+    "typography": "^0.16.19",
+    "typography-theme-wordpress-2016": "^0.16.19",
     "wp-block-components": "^0.2.0"
   },
   "repository": {
