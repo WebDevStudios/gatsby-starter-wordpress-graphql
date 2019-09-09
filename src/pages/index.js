@@ -27,7 +27,6 @@ class Home extends Component {
             </header>
             <section
               sx={{
-
                 backgroundColor: 'secondary',
               }}
             dangerouslySetInnerHTML={{ __html: post.node.content }} />
