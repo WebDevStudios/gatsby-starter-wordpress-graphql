@@ -3,7 +3,7 @@ export default {
     text: "#333",
     background: "#333",
     primary: "#663399",
-    secondary: "#ff6347",
+    secondary: "honeydew",
   },
   styles: {
     h2: {
