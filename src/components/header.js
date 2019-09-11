@@ -5,8 +5,13 @@ import Menu from "./menu";
 import { useColorMode } from "theme-ui";
 
 const Header = ({ siteTitle, siteDescription }) => {
-  const [colorMode, setColorMode] = useColorMode();
-
+  const modes = ["light", "swiss", "dark", "deep"];
+  const [mode, setMode] = useColorMode();
+  const cycleMode = e => {
+    const i = modes.indexOf(mode);
+    const next = modes[(i + 1) % modes.length];
+    setMode(next);
+  };
   return (
     <header>
       <h1>
@@ -14,13 +19,7 @@ const Header = ({ siteTitle, siteDescription }) => {
       </h1>
       <p dangerouslySetInnerHTML={{ __html: siteDescription }} />
       <Menu />
-      <button
-        onClick={e => {
-          setColorMode(colorMode === "light" ? "dark" : "light");
-        }}
-      >
-        Toggle {colorMode === "light" ? "Dark" : "Light"}
-      </button>
+      <button onClick={cycleMode}>{mode}</button>
     </header>
   );
 };
