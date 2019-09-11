@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import Header from "./header";
 import Footer from "./footer";
+import { Layout as ThemeLayout, Main, Container } from "theme-ui";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -17,16 +18,16 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <ThemeLayout>
         <Header
           siteTitle={data.wordpress.generalSettings.title}
           siteDescription={data.wordpress.generalSettings.description}
         />
-        <section>
-          <main>{children}</main>
-        </section>
+        <Container>
+          <Main>{children}</Main>
+        </Container>
         <Footer siteTitle={data.wordpress.generalSettings.title} />
-      </>
+      </ThemeLayout>
     )}
   />
 );
