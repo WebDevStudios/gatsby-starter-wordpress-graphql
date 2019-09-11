@@ -4,10 +4,6 @@ import Layout from "../components/layout";
 import Byline from "../components/byline";
 import Meta from "../components/meta";
 
-/** @jsx jsx */
-import { jsx } from "theme-ui"
-
-
 class Home extends Component {
   render() {
     const posts = this.props.data.wordpress.posts;
@@ -27,9 +23,10 @@ class Home extends Component {
             </header>
             <section
               sx={{
-                backgroundColor: 'secondary',
+                backgroundColor: "secondary"
               }}
-            dangerouslySetInnerHTML={{ __html: post.node.content }} />
+              dangerouslySetInnerHTML={{ __html: post.node.content }}
+            />
             <footer>
               <Meta props={post.node} />
             </footer>
