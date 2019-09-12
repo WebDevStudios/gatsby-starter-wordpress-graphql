@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Menu from "./menu";
 /** @jsx jsx */
-import { useColorMode, jsx, Container, Flex } from "theme-ui";
+import { jsx, Container, Flex, useColorMode } from "theme-ui";
 
 const Header = ({ siteTitle, siteDescription }) => {
   const modes = ["light", "swiss", "deep", "dark"];
@@ -14,7 +14,7 @@ const Header = ({ siteTitle, siteDescription }) => {
     setMode(next);
   };
   return (
-    <header>
+    <header sx={{ variant: "layout.header" }}>
       <Container
         sx={{
           display: "flex",
@@ -33,7 +33,15 @@ const Header = ({ siteTitle, siteDescription }) => {
         </Flex>
         <Flex sx={{ flexDirection: "column", alignItems: "flex-end" }}>
           <Menu />
-          <button sx={{ mt: 2, p: 1, width: 50 }} onClick={cycleMode}>
+          <button
+            sx={{
+              mt: 2,
+              p: 1,
+              variant: "buttons.primary",
+              width: 50
+            }}
+            onClick={cycleMode}
+          >
             {mode}
           </button>
         </Flex>
