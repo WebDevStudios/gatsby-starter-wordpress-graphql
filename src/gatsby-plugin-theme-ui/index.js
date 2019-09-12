@@ -121,7 +121,11 @@ export default {
       color: "primary"
     },
     pre: {
-      ...nightOwl
+      fontFamily: "monospace",
+      overflowX: "auto",
+      code: {
+        color: "inherit"
+      }
     },
     code: {
       fontFamily: "monospace",
