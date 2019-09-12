@@ -21,12 +21,7 @@ class Home extends Component {
               </h2>
               <Byline props={post.node} />
             </header>
-            <section
-              sx={{
-                backgroundColor: "secondary"
-              }}
-              dangerouslySetInnerHTML={{ __html: post.node.content }}
-            />
+            <section dangerouslySetInnerHTML={{ __html: post.node.content }} />
             <footer>
               <Meta props={post.node} />
             </footer>
