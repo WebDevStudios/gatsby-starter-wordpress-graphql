@@ -1,3 +1,4 @@
+import nightOwl from "@theme-ui/prism/presets/night-owl";
 // Create a theme object to include custom color, typography, and layout values.
 // Customize: https://theme-ui.com/customize
 export default {
@@ -121,11 +122,7 @@ export default {
       color: "primary"
     },
     pre: {
-      fontFamily: "monospace",
-      overflowX: "auto",
-      code: {
-        color: "inherit"
-      }
+      ...nightOwl
     },
     code: {
       fontFamily: "monospace",
@@ -148,42 +145,29 @@ export default {
       maxWidth: "100%"
     },
     Layout: {
-      color: "gray.2",
       fontFamily: "body",
       fontSize: 1,
       lineHeight: "body"
+    }
+  },
+  layout: {
+    header: {
+      color: "text",
+      backgroundColor: "muted"
     },
-    Header: {
-      backgroundColor: "primary",
+    footer: {
+      color: "text",
+      backgroundColor: "muted"
+    }
+  },
+  buttons: {
+    primary: {
       color: "background",
-      fontWeight: "bold",
-      margin: "0 auto",
-      maxWidth: "max",
-      padding: 3,
-      width: "default",
-      a: {
-        color: "inherit"
-      }
+      bg: "primary"
     },
-    Main: {
-      margin: "0 auto",
-      maxWidth: "max",
-      width: "default"
-    },
-    Container: {
-      padding: 3
-    },
-    Footer: {
-      backgroundColor: "primary",
-      color: "background",
-      fontWeight: "bold",
-      margin: "0 auto",
-      maxWidth: "max",
-      padding: 3,
-      width: "default",
-      a: {
-        color: "inherit"
-      }
+    secondary: {
+      color: "primary",
+      bg: "secondary"
     }
   }
 };

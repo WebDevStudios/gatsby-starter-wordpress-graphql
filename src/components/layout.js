@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import Header from "./header";
 import Footer from "./footer";
-import { Layout as ThemeLayout, Main, Container } from "theme-ui";
+import { Layout as ThemeLayout, Container, Main } from "theme-ui";
 
 const Layout = ({ children }) => (
   <StaticQuery
