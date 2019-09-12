@@ -3,7 +3,7 @@
 export default {
   initialColorMode: "light",
   useCustomProperties: true,
-  breakpoints: ["300px", "900px", "1100px"],
+  breakpoints: ["600px", "900px", "1200px"],
   space: [0, 4, 8, 16, 32],
   fonts: {
     body: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
@@ -16,7 +16,8 @@ export default {
   colors: {
     gray: ["#efefef", "#ddd", "#333", "#111"],
     background: "#fff",
-    primary: "rebeccapurple",
+    primary: "#663399",
+    secondary: "#f1f1f1",
     modes: {
       dark: {
         text: "#fff",
@@ -29,24 +30,24 @@ export default {
         accent: "#c0f"
       },
       deep: {
-        text: "hsl(210, 50%, 96%)",
-        background: "hsl(230, 25%, 18%)",
-        primary: "hsl(260, 100%, 80%)",
-        secondary: "hsl(290, 100%, 80%)",
-        highlight: "hsl(260, 20%, 40%)",
-        accent: "hsl(290, 100%, 80%)",
-        muted: "hsla(230, 20%, 0%, 20%)",
-        gray: "hsl(210, 50%, 60%)"
+        text: "#f0f5fa",
+        background: "#222639",
+        primary: "#b9f",
+        secondary: "#e9f",
+        highlight: "#5f527a",
+        accent: "#e9f",
+        muted: "#0003",
+        gray: "#69c"
       },
       swiss: {
-        text: "hsl(10, 20%, 20%)",
-        background: "hsl(10, 10%, 98%)",
-        primary: "hsl(10, 80%, 50%)",
-        secondary: "hsl(10, 60%, 50%)",
-        highlight: "hsl(10, 40%, 90%)",
-        accent: "hsl(250, 60%, 30%)",
-        muted: "hsl(10, 20%, 94%)",
-        gray: "hsl(10, 20%, 50%)"
+        text: "#3d2c29",
+        background: "#fafaf9",
+        primary: "#e63b19",
+        secondary: "#cc4d33",
+        highlight: "#f0dfdb",
+        accent: "#2e1f7a",
+        muted: "#f3eeed",
+        gray: "#996f66"
       }
     }
   },
