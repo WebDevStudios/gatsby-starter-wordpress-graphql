@@ -6,7 +6,7 @@ import Menu from "./menu";
 import { jsx, Container, Flex, useColorMode } from "theme-ui";
 
 const Header = ({ siteTitle, siteDescription }) => {
-  const modes = ["light", "swiss", "deep", "dark"];
+  const modes = ["default", "swiss", "deep", "dark"];
   const [mode, setMode] = useColorMode();
   const cycleMode = e => {
     const i = modes.indexOf(mode);

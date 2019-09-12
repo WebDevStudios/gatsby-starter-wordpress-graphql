@@ -2,7 +2,7 @@ import nightOwl from "@theme-ui/prism/presets/night-owl";
 // Create a theme object to include custom color, typography, and layout values.
 // Customize: https://theme-ui.com/customize
 export default {
-  initialColorMode: "light",
+  initialColorMode: "default",
   useCustomProperties: true,
   breakpoints: ["600px", "900px", "1200px"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
