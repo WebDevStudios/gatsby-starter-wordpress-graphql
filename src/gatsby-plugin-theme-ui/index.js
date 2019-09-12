@@ -4,20 +4,32 @@ export default {
   initialColorMode: "light",
   useCustomProperties: true,
   breakpoints: ["600px", "900px", "1200px"],
-  space: [0, 4, 8, 16, 32],
-  fonts: {
-    body: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  sizes: {
+    width: "90vw",
+    maxWidth: "1100px"
   },
-  fontSizes: [16, 18, 20, 22, 27, 36],
+  fonts: {
+    body: "system-ui, sans-serif",
+    heading: "inherit",
+    monospace: "Menlo, monospace"
+  },
+  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700
+  },
   lineHeights: {
-    body: 1.45,
-    heading: 1.1
+    body: 1.5,
+    heading: 1.125
   },
   colors: {
-    gray: ["#efefef", "#ddd", "#333", "#111"],
+    text: "#000",
     background: "#fff",
-    primary: "#663399",
-    secondary: "#f1f1f1",
+    primary: "#07c",
+    secondary: "#30c",
+    muted: "#f6f6f6",
     modes: {
       dark: {
         text: "#fff",
@@ -51,11 +63,90 @@ export default {
       }
     }
   },
-  sizes: {
-    default: "90vw",
-    max: "1100px"
-  },
   styles: {
+    root: {
+      fontFamily: "body",
+      lineHeight: "body",
+      fontWeight: "body"
+    },
+    h1: {
+      color: "text",
+      fontFamily: "heading",
+      lineHeight: "1.2",
+      fontWeight: "heading",
+      fontSize: 5
+    },
+    h2: {
+      color: "text",
+      fontFamily: "heading",
+      lineHeight: "1.2",
+      fontWeight: "heading",
+      fontSize: 4
+    },
+    h3: {
+      color: "text",
+      fontFamily: "heading",
+      lineHeight: "1.2",
+      fontWeight: "heading",
+      fontSize: 3
+    },
+    h4: {
+      color: "text",
+      fontFamily: "heading",
+      lineHeight: "1.2",
+      fontWeight: "heading",
+      fontSize: 2
+    },
+    h5: {
+      color: "text",
+      fontFamily: "heading",
+      lineHeight: "1.2",
+      fontWeight: "heading",
+      fontSize: 1
+    },
+    h6: {
+      color: "text",
+      fontFamily: "heading",
+      lineHeight: "1.2",
+      fontWeight: "heading",
+      fontSize: 0
+    },
+    p: {
+      color: "text",
+      fontFamily: "body",
+      fontWeight: "body",
+      lineHeight: "body"
+    },
+    a: {
+      color: "primary"
+    },
+    pre: {
+      fontFamily: "monospace",
+      overflowX: "auto",
+      code: {
+        color: "inherit"
+      }
+    },
+    code: {
+      fontFamily: "monospace",
+      fontSize: "inherit"
+    },
+    table: {
+      width: "100%",
+      borderCollapse: "separate",
+      borderSpacing: 0
+    },
+    th: {
+      textAlign: "left",
+      borderBottomStyle: "solid"
+    },
+    td: {
+      textAlign: "left",
+      borderBottomStyle: "solid"
+    },
+    img: {
+      maxWidth: "100%"
+    },
     Layout: {
       color: "gray.2",
       fontFamily: "body",
@@ -92,27 +183,6 @@ export default {
       width: "default",
       a: {
         color: "inherit"
-      }
-    },
-    h1: {
-      color: "gray.3",
-      fontSize: 5,
-      fontWeight: "bold",
-      lineHeight: "heading",
-      margin: "1rem 0 0"
-    },
-    ul: {
-      borderTop: "1px solid",
-      borderColor: "gray.0",
-      listStyle: "none",
-      padding: 0
-    },
-    li: {
-      borderBottom: "1px solid",
-      borderColor: "gray.1",
-      padding: 2,
-      "&:focus-within,&:hover": {
-        backgroundColor: "gray.0"
       }
     }
   }
