@@ -26,7 +26,7 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
-    "theme-ui": "^0.2.41",
+    "theme-ui": "^0.2.42",
     "typography": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19",
     "wp-block-components": "^0.2.0"
