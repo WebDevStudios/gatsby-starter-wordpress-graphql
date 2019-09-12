@@ -1,5 +1,7 @@
 import React from "react";
 import { StaticQuery, graphql, Link } from "gatsby";
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 
 const Menu = () => (
   <StaticQuery
@@ -25,14 +27,21 @@ const Menu = () => (
     render={data => {
       return (
         <>
-          <ul>
+          <ul sx={{ listStyle: "none", paddingY: 0, marginY: 0 }}>
             {data.wordpress.menuItems.edges.map(item => {
               let cleanURL = item.node.url.replace(
                 data.wordpress.generalSettings.url,
                 ""
               );
               return (
-                <li key={item.node.url}>
+                <li
+                  sx={{
+                    display: "inline",
+                    fontSize: 16,
+                    ml: 2
+                  }}
+                  key={item.node.url}
+                >
                   <Link key={item.node.url} to={cleanURL}>
                     {item.node.label}
                   </Link>

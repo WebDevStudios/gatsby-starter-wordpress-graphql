@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Menu from "./menu";
-import { useColorMode } from "theme-ui";
+/** @jsx jsx */
+import { useColorMode, jsx, Container, Flex } from "theme-ui";
 
 const Header = ({ siteTitle, siteDescription }) => {
-  const modes = ["light", "swiss", "dark", "deep"];
+  const modes = ["light", "swiss", "deep", "dark"];
   const [mode, setMode] = useColorMode();
   const cycleMode = e => {
     const i = modes.indexOf(mode);
@@ -14,12 +15,29 @@ const Header = ({ siteTitle, siteDescription }) => {
   };
   return (
     <header>
-      <h1>
-        <Link to="/" dangerouslySetInnerHTML={{ __html: siteTitle }} />
-      </h1>
-      <p dangerouslySetInnerHTML={{ __html: siteDescription }} />
-      <Menu />
-      <button onClick={cycleMode}>{mode}</button>
+      <Container
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          py: 1
+        }}
+      >
+        <Flex sx={{ flexDirection: "column" }}>
+          <h1 sx={{ my: 0 }}>
+            <Link to="/" dangerouslySetInnerHTML={{ __html: siteTitle }} />
+          </h1>
+          <p
+            sx={{ fontSize: 20 }}
+            dangerouslySetInnerHTML={{ __html: siteDescription }}
+          />
+        </Flex>
+        <Flex sx={{ flexDirection: "column", alignItems: "flex-end" }}>
+          <Menu />
+          <button sx={{ mt: 2, p: 1, width: 50 }} onClick={cycleMode}>
+            {mode}
+          </button>
+        </Flex>
+      </Container>
     </header>
   );
 };
