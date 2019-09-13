@@ -1,7 +1,5 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-/** @jsx jsx */
-import { jsx, Flex } from "theme-ui";
 
 const Byline = ({ props }) => (
   <>
