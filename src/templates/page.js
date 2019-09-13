@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+/** @jsx jsx */
+import { jsx, Flex } from "theme-ui";
 
 class PageTemplate extends Component {
   render() {
@@ -11,7 +13,10 @@ class PageTemplate extends Component {
     return (
       <Layout>
         <SEO title={page.title} description={page.excerpt} image={image} />
-        <h1 dangerouslySetInnerHTML={{ __html: page.title }} />
+        <h1
+          sx={{ marginTop: 0 }}
+          dangerouslySetInnerHTML={{ __html: page.title }}
+        />
         <div dangerouslySetInnerHTML={{ __html: page.content }} />
       </Layout>
     );
