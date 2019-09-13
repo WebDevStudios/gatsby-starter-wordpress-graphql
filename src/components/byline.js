@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
+/** @jsx jsx */
+import { jsx, Flex } from "theme-ui";
 
 const Byline = ({ props }) => (
   <>
@@ -15,7 +17,7 @@ const Byline = ({ props }) => (
       <Link to={"/author/" + props.author.slug}>
         <span>{props.author.name}</span>
       </Link>
-    </span>
+    </span>{" "}
     {null === props.commentCount ? `` : `with ${props.commentCount} comments`}
   </>
 );
