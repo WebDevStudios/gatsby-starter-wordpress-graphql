@@ -28,8 +28,7 @@ const Meta = ({ props }) => (
         <li
           sx={{
             display: "inline",
-            ml: 1,
-            mr: 1
+            ml: 1
           }}
           key={tag.node.slug}
         >

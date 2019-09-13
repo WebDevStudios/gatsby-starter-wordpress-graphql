@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby";
 const Byline = ({ props }) => (
   <>
     <time dateTime={props.date}>
-      Published on{" "}
+      <span>Published on </span>
       <Link to={props.slug} rel="bookmark">
         {props.date}
       </Link>
