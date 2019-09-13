@@ -19,7 +19,7 @@ const Header = ({ siteTitle, siteDescription }) => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          py: 1
+          py: 4
         }}
       >
         <Flex sx={{ flexDirection: "column" }}>

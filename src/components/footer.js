@@ -9,7 +9,7 @@ const Footer = ({ siteTitle }) => (
       sx={{
         display: "flex",
         justifyContent: "space-between",
-        py: 1
+        py: 4
       }}
     >
       <p>
