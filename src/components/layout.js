@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import Header from "./header";
 import Footer from "./footer";
+import { Global } from "@emotion/core";
+import { Layout as ThemeLayout, Container, Main } from "theme-ui";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -18,14 +20,23 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header
-          siteTitle={data.wordpress.generalSettings.title}
-          siteDescription={data.wordpress.generalSettings.description}
+        <Global
+          styles={{
+            body: {
+              margin: 0
+            }
+          }}
         />
-        <section>
-          <main>{children}</main>
-        </section>
-        <Footer siteTitle={data.wordpress.generalSettings.title} />
+        <ThemeLayout>
+          <Header
+            siteTitle={data.wordpress.generalSettings.title}
+            siteDescription={data.wordpress.generalSettings.description}
+          />
+          <Container>
+            <Main>{children}</Main>
+          </Container>
+          <Footer siteTitle={data.wordpress.generalSettings.title} />
+        </ThemeLayout>
       </>
     )}
   />

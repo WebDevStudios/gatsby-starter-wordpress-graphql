@@ -4,7 +4,8 @@ module.exports = {
     organization: {
       name: "WebDevStudios",
       url: "https://gatsby.wdslab.com",
-      logo: "http://gatsby.wdslab.com/wp-content/uploads/2019/08/wds-logo-small.png"
+      logo:
+        "http://gatsby.wdslab.com/wp-content/uploads/2019/08/wds-logo-small.png"
     },
     social: {
       twitter: "@webdevstudios",
@@ -42,6 +43,8 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-sitemap"
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-theme-ui"
   ]
 };

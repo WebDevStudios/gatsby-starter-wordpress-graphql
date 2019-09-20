@@ -65,8 +65,6 @@ export const pageQuery = graphql`
           ...CoreButtonBlock
           ...CoreGravityFormsBlock
         }
-        content
-        excerpt
       }
     }
   }
