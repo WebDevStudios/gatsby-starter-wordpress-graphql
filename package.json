@@ -22,7 +22,7 @@
     "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-sharp": "^2.3.9",
     "gatsby-plugin-sitemap": "^2.2.24",
-    "gatsby-plugin-theme-ui": "^0.2.43",
+    "gatsby-plugin-theme-ui": "^0.2.53",
     "gatsby-source-filesystem": "^2.1.42",
     "gatsby-source-graphql": "^2.1.28",
     "gatsby-transformer-sharp": "^2.3.9",
