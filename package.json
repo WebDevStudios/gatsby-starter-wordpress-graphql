@@ -23,7 +23,7 @@
     "gatsby-plugin-sharp": "^2.3.10",
     "gatsby-plugin-sitemap": "^2.2.24",
     "gatsby-plugin-theme-ui": "^0.2.53",
-    "gatsby-source-filesystem": "^2.1.42",
+    "gatsby-source-filesystem": "^2.1.43",
     "gatsby-source-graphql": "^2.1.29",
     "gatsby-transformer-sharp": "^2.3.9",
     "prop-types": "^15.7.2",
