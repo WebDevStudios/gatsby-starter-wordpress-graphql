@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.23",
+    "@emotion/styled": "^10.0.27",
     "@mdx-js/react": "^1.5.3",
     "gatsby": "^2.18.17",
     "gatsby-image": "^2.2.37",
