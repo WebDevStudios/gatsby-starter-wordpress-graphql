@@ -21,7 +21,7 @@
     "gatsby-plugin-gtag": "^1.0.12",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.3.10",
-    "gatsby-plugin-sitemap": "^2.2.24",
+    "gatsby-plugin-sitemap": "^2.2.25",
     "gatsby-plugin-theme-ui": "^0.2.53",
     "gatsby-source-filesystem": "^2.1.43",
     "gatsby-source-graphql": "^2.1.30",
